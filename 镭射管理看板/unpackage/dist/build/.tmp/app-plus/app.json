@@ -1,0 +1,36 @@
+{
+  "pages": [
+    "pages/index/menu",
+    "pages/user/my_info",
+    "pages/index/choose_server",
+    "pages/login/login",
+    "pages/index/ddsm",
+    "pages/index/index",
+    "pages/index/kbgl",
+    "pages/index/blmx",
+    "pages/index/lcdrkw",
+    "pages/index/ckjh",
+    "pages/index/lcdSelect",
+    "pages/index/psrw",
+    "pages/index/blsm",
+    "pages/index/xlsm",
+    "pages/index/menu2",
+    "pages/index/new1"
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "镭射设备管理看板",
+    "navigationBarBackgroundColor": "#333",
+    "backgroundColor": "#F8F8F8",
+    "pageOrientation": "portrait"
+  },
+  "nvueCompiler": "uni-app",
+  "renderer": "auto",
+  "splashscreen": {
+    "alwaysShowBeforeRender": true,
+    "autoclose": false
+  },
+  "appname": "Hon_Link",
+  "compilerVersion": "2.6.1",
+  "usingComponents": {}
+}

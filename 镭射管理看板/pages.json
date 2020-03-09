@@ -1,0 +1,121 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		// {
+		// 	"path": "pages/index/new1",
+		// 	"style": {
+		// 		"navigationStyle":"custom",
+		// 		"navigationBarTitleText": "弘信电子调度看板",
+		// 		"navigationBarTextStyle": "black",
+		// 		"enablePullDownRefresh": true
+		// 	}
+		// },
+		{
+			"path": "pages/index/menu",
+			"style": {
+				"navigationBarTitleText": "菜单"
+			}
+		},
+		{
+			"path": "pages/user/my_info",
+			"style": {
+				"navigationBarTitleText": "我的"
+			}
+		},
+		{
+			"path": "pages/index/choose_server",
+			"style": {
+				"navigationBarTitleText": "选择服务器"
+			}
+		},
+		{
+			"path": "pages/login/login",
+			"style": {
+				"navigationBarTitleText": "HonSoft",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"fontSize": "14"
+							// "badgeText": "12"
+						}]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/index/ddsm",
+			"style": {
+				"navigationBarTitleText": "流程单移转"
+			}
+		},
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "镭射设备管理看板",
+				"navigationBarBackgroundColor": "#2C405A",
+				"navigationBarTextStyle": "white",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/index/kbgl",
+			"style": {
+				"navigationBarTitleText": "看板管理"
+			}
+		},
+		{
+			"path": "pages/index/blmx",
+			"style": {
+				"navigationBarTitleText": "备料明细"
+			}
+		}, 
+		{
+			"path": "pages/index/lcdrkw",
+			"style": {
+				"navigationBarTitleText": "流程单入库位"
+			}
+		},
+		{
+			"path": "pages/index/ckjh",
+			"style": {
+				"navigationBarTitleText": "出库计划列表"
+			}
+		},
+		{
+			"path": "pages/index/lcdSelect",
+			"style": {
+				"navigationBarTitleText": "流程单查询"
+			}
+		},
+		{
+			"path": "pages/index/psrw"
+		},
+		{
+			"path": "pages/index/blsm"
+		},
+		{
+			"path": "pages/index/xlsm"
+		},
+		{
+			"path": "pages/index/menu2",
+			"style": {
+				"navigationBarTitleText": "二级菜单"
+			}
+		},
+		{
+			"path": "pages/index/new1",
+			"style": {
+				"navigationBarTitleText": "镭射设备管理看板",
+				"navigationBarBackgroundColor": "#2C405A",
+				"navigationBarTextStyle": "white",
+				"navigationStyle": "custom"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "镭射设备管理看板",
+		"navigationBarBackgroundColor": "#333",
+		"backgroundColor": "#F8F8F8",
+		"pageOrientation": "portrait"
+	}
+}

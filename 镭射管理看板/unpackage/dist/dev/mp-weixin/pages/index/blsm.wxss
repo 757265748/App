@@ -1,0 +1,53 @@
+
+.main.data-v-07a18533 {
+	background-color: #DAE3F3;
+}
+uni-input.data-v-07a18533 {
+	background-color: #fff;
+	color: #fff;
+}
+button.data-v-07a18533 {
+	margin-top: 30rpx;
+	margin-bottom: 30rpx;
+}
+.uni-form-item.data-v-07a18533 {
+	width: 100%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	box-sizing: border-box;
+	padding-right: 10px;
+}
+.title.data-v-07a18533 {
+	font-weight: bold;
+	padding: 10rpx 25rpx;
+	-webkit-box-flex: 3;
+	-webkit-flex: 3;
+	        flex: 3;
+}
+.with-fun.data-v-07a18533 {
+	-webkit-box-flex: 8;
+	-webkit-flex: 8;
+	        flex: 8;
+}
+.login.data-v-07a18533 {
+	font-weight: bold;
+	width: 114px;
+	height: 45px;
+}
+.uni-icon-clear.data-v-07a18533,
+.uni-icon-eye.data-v-07a18533 {
+	color: #999;
+}
+.msg.data-v-07a18533 {
+	text-align: center;
+	color: red;
+}
+

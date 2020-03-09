@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "流程单查询",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "z-table": "/components/z-table/z-table_v1",
+    "uni-pagination": "/components/uni-pagination/uni-pagination"
+  }
+}

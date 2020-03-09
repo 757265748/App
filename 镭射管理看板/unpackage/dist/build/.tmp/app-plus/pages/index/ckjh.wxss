@@ -1,0 +1,32 @@
+
+.z-table-title-item{
+	background-color: #fff;
+}
+.btn-group {
+	padding-right: 60px;
+	height: 60px;
+}
+.btn-group .selectBtn {
+	float: right;
+}
+.head {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	        flex-wrap: wrap;
+}
+.uni-form-item {
+	width: 50%;
+}
+.uni-input {
+	text-indent: 10px;
+	padding: 0;
+	font-size: 20px;
+}
+.foot {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+

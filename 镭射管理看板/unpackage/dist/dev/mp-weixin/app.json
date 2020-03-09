@@ -1,0 +1,25 @@
+{
+  "pages": [
+    "pages/index/menu",
+    "pages/index/index",
+    "pages/index/blmx",
+    "pages/index/lcdrkw",
+    "pages/index/ckjh",
+    "pages/index/lcdSelect",
+    "pages/index/psrw",
+    "pages/index/blsm",
+    "pages/index/xlsm",
+    "pages/login/login",
+    "pages/index/menu2",
+    "pages/index/index"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "镭射设备管理看板",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "usingComponents": {},
+  "sitemapLocation": "sitemap91.json"
+}

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "uni-pagination": "/components/uni-pagination/uni-pagination",
+    "z-table": "/components/z-table/z-table_v1"
+  }
+}

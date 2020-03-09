@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "流程单移转",
+  "usingComponents": {
+    "uni-segmented-control": "/components/uni-segmented-control/uni-segmented-control"
+  }
+}

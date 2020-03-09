@@ -1,0 +1,6 @@
+
+.ok{
+	margin: 60rpx auto;
+	width: 50%;
+}
+

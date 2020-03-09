@@ -1,0 +1,57 @@
+.btn_group {
+  margin-top: 20rpx;
+}
+.title {
+  font-weight: bold;
+  padding: 10rpx 25rpx;
+  -webkit-box-flex: 3;
+  -webkit-flex: 3;
+          flex: 3;
+}
+.uni-form-item {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  box-sizing: border-box;
+  padding-right: 10px;
+}
+.with-fun {
+  -webkit-box-flex: 8;
+  -webkit-flex: 8;
+          flex: 8;
+}
+.btn-group {
+  padding-right: 60px;
+  height: 60px;
+}
+.btn-group .selectBtn {
+  float: right;
+}
+.head {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+/* .uni-form-item {
+	width: 50%;
+} */
+.uni-input {
+  text-indent: 10px;
+  padding: 0;
+}
+.foot {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+

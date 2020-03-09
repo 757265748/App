@@ -1,0 +1,162 @@
+
+.list_dz view{
+	/* color: #20E8B4; */
+}
+.list_zz view{
+	color: #20E8B4;
+}
+.list_ywg view{
+	color: #FF1F24;
+}
+.b_3 .list .item view,
+.b_3 .list .item,
+.b_1 .list .content .item,
+.b_1 .list .content .item view,
+.b_2 .list .ywg .list_ywg,
+.b_2 .list .zz .list_zz,
+.b_2 .list .dz .list_dz {
+	margin: 2rpx;
+	text-align: center;
+}
+.b_2 .list .jt .jt_head{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+}
+.b_2 .list .jt .item{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	box-sizing: border-box;
+	margin: 2rpx auto;
+	border-bottom: 1px solid #666;
+}
+.b_2 .list .ywg .list_ywg,
+.b_2 .list .dz .list_dz,
+.b_2 .list .zz .list_zz{
+	box-sizing: border-box;
+}
+.b_2 .list .jt{
+	-webkit-box-flex: .3;
+	-webkit-flex: .3;
+	        flex: .3;
+}
+.b_1 .list .content>view,
+.b_3 .list .item view,
+.b_2 .list .zz .list_zz .item_1 view,
+.b_2 .list .ywg .list_ywg .item_1 view,
+.b_2 .list .dz .list_dz .item_1 view,
+.b_2 .list .dz,
+.b_2 .list_title view,
+.b_2 .list .zz,
+.b_2 .list .ywg,
+.b_2 .list .dz .list .item_1 view {
+	-webkit-box-flex: 1;
+	-webkit-flex: 1 1 0%;
+	        flex: 1 1 0%;
+}
+.b_2 .list .dz .list_dz,
+.b_2 .list .zz .list_zz,
+.b_2 .list .ywg .list_ywg,
+.b_3 .list .item,
+.b_1 .list .content>view {
+	border-bottom: 1px solid #666;
+	box-sizing: border-box;
+}
+.b_2 .list .title view,
+.b_2 .list .content view,
+.b_2 .list_title,
+.b_2 .pageCount {
+	text-align: center;
+}
+.b_3 .list .title view,
+.b_3 .list .content view,
+.b_3 .list_title,
+.b_3 .pageCount,
+.b_1 .list .title view,
+.b_1 .list .content view,
+.b_1 .list_title,
+.b_1 .pageCount {
+	text-align: center;
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	        flex: 1;
+}
+.b_1 .pageCount,
+.b_3 .pageCount{
+	border: 2px solid #ccc;
+	border-radius: 5rpx;
+	box-sizing: border-box;
+}
+.body>view {
+	border: 1px solid #666;
+	overflow-y: scroll;
+}
+.body view {
+	font-size: 0.1rem;
+}
+.body {
+	font-size: 12px;
+}
+.head .title {
+	text-align: center;
+	font-size: .3rem;
+	height: 20rpx;
+}
+.head .title text{
+	position: relative;
+	top: -2rpx;
+}
+.head .title ._img{
+	width: .4rem;
+	height: .4rem;
+	position: relative;
+	/* vertical-align: middle; */
+	top: 4rpx;
+	margin-right: 5rpx;
+}
+/* 单独元素样式 */
+view{
+	line-height: 1.5;
+	color: white;
+}
+.item{
+	/* min-height: .8rem; */
+	/* border-radius: 5upx; */
+}
+.title {
+	text-align: center;
+}
+.jt .item,
+.dz .dz_head .pageCount,
+.zz .zz_head .pageCount,
+.ywg .ywg_head .pageCount{
+	text-shadow: 0 0 3px #FF0000;
+}
+.pageCount{
+	width: .5rem;
+	height: .5rem;
+	margin: auto;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+}
+

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "出库计划列表",
+  "usingComponents": {
+    "z-table": "/components/z-table/z-table_v1",
+    "uni-pagination": "/components/uni-pagination/uni-pagination"
+  }
+}

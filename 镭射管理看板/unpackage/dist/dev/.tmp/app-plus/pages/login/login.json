@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "HonSoft",
+  "titleNView": {
+    "buttons": [
+      {
+        "fontSize": "14"
+      }
+    ]
+  },
+  "usingComponents": {
+    "xfl-select": "/components/xfl-select/xfl-select"
+  }
+}

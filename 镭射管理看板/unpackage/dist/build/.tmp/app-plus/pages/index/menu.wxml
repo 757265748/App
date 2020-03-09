@@ -1,0 +1,1 @@
+<view class="main"><view class="title">一级菜单</view><view class="grid-view"><uni-grid vue-id="1" options="{{data1}}" columnNum="{{4}}" show-border="{{false}}" data-event-opts="{{[['^click',[['onClick']]]]}}" bind:click="__e" bind:__l="__l"></uni-grid></view></view>

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "镭射设备管理看板",
+  "navigationBarBackgroundColor": "#2C405A",
+  "navigationBarTextStyle": "white",
+  "navigationStyle": "custom",
+  "usingComponents": {}
+}

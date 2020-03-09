@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "菜单选择",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "uni-grid": "/components/uni-grid/uni-grid"
+  }
+}

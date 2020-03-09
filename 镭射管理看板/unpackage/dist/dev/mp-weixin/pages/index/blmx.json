@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "备料明细",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "z-table": "/components/z-table/z-table_v1",
+    "uni-pagination": "/components/uni-pagination/uni-pagination",
+    "uni-segmented-control": "/components/uni-segmented-control/uni-segmented-control"
+  }
+}

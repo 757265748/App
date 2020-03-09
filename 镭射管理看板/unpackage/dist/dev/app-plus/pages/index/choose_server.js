@@ -1,0 +1,2 @@
+setCssToHead([".",[1],"ok{ margin: ",[0,60]," auto; width: 50%; }\n",],undefined,{path:"./pages/index/choose_server.wxss"})();
+document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/index/choose_server.wxml') } }));

@@ -1,0 +1,2 @@
+setCssToHead([".",[1],"exitLogin{ margin: ",[0,40],"; -webkit-box-pack: center; -webkit-justify-content: center; justify-content: center; }\n.",[1],"exitLogin wx-view{ width: 50%; }\n",],undefined,{path:"./pages/user/my_info.wxss"})();
+document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/user/my_info.wxml') } }));

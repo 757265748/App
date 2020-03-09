@@ -1,0 +1,2 @@
+setCssToHead([".",[1],"foot{ position: fixed; bottom: 0; width: 100%; }\nwx-button{ height: ",[0,100],"; -webkit-box-flex: 1; -webkit-flex: 1; flex: 1; display: -webkit-box; display: -webkit-flex; display: flex; -webkit-box-align: center; -webkit-align-items: center; align-items: center; -webkit-box-pack: center; -webkit-justify-content: center; justify-content: center; }\n",],undefined,{path:"./pages/index/psrw.wxss"})();
+document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/index/psrw.wxml') } }));

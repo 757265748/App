@@ -1,0 +1,11 @@
+
+.exitLogin{
+	margin: 40rpx;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+}
+.exitLogin view{
+	width: 50%;
+}
+
