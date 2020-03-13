@@ -49,19 +49,28 @@
 				pageSize: 10,
 				nowType: 0,
 				singleSelect: false,
+				host:''
 			}
 		},
 		onLoad() {
-			getBarnoInfo('1010100302|31RLT7TZ|9112617Z|25|2019-11-16|S0939|ChinaZhangzhou').then(res=>{
+			this.host=uni.getStorageSync("host");
+			console.log(uni.getStorageSync("host"));
+			getBarnoInfo({
+				host:this.host
+			}).then(res=>{
 				console.log(res);
 			});
-			getMC02D1ByMclist().then(res=>{
+			getMC02D1ByMclist({
+				host:this.host
+			}).then(res=>{
 				console.log(res);
 			});
 			// InsertMC02D1().then(res=>{
 			// 	console.log(res);
 			// });
-			ckjh().then(res=>{
+			ckjh({
+				host:this.host
+			}).then(res=>{
 				console.log(res);
 			})
 			// this.getData();
@@ -97,7 +106,9 @@
 					width: 80,
 					key: "no"
 				}
-				getGridTitleCK().then(res => {
+				getGridTitleCK({
+					host:this.host
+				}).then(res => {
 					this.tableColumns.push(no);
 					for (var item in res.data) {
 						this.tableKey.push(res.data[item].FieldCode);

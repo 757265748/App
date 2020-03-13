@@ -1,16 +1,13 @@
 import {
 	database
 } from '@/api/config.js'
-export function login(data,host) {
+const host = uni.getStorageSync("host");
+export function login(data, host) {
 	//var data='[{"USERID":"","MACIP":"192.168.150.8"},{"emplid":'+data.username+',"password":'+data.password+'}]';
-	console.log(data);
-	let base="";
-	if(host==""||host==undefined){
-		
-	}
+	var host = uni.getStorageSync("host");
 	return new Promise((resolve, reject) => {
 		uni.request({ //http://58.23.137.151:8081/loginByEmplid.do?USERID=admin&MACIP=&password=123456
-			url: `http://${host}loginByEmplid.do`,
+			url: `${host}loginByEmplid.do`,
 			method: "GET",
 			header: {
 				'content-type': 'application/json'
@@ -29,7 +26,7 @@ export function login(data,host) {
 					msg = res.data.Messager;
 				} else {
 					msg = res.data.ErrorMsg
-				}	
+				}
 				console.log(flag, msg);
 				resolve({
 					"flag": flag,
@@ -45,18 +42,48 @@ export function login(data,host) {
 }
 
 //根据看板设备编号获取要显示的看板
-export function getPB35D1ByBoano(data) {
+export function getPB35D1ByBoano(data, host) {
 	return new Promise((resolve, reject) => {
 		uni.request({ //http://192.168.130.198:81/MC02WebService.asmx
-			url: `${database.ip}getPB35D1ByBoano.do`,
+			url: `${host}/getPB35D1ByBoano.do`,
 			method: "GET",
 			header: {
 				'content-type': 'application/json'
 			},
 			data: {
-				USERID:'',
-				MACIP:'',
-				boa_no:'001'
+				USERID: '',
+				MACIP: '',
+				boa_no: '001'
+			},
+			success(res) {
+				resolve(res.data);
+			},
+			fail(xhr) {
+				console.log(xhr);
+			}
+		})
+	})
+}
+//调度看板
+export function DW04WebService(data, host) {
+	return new Promise((resolve, reject) => {
+		uni.request({
+			// url: `${host}/getPB35D1ByBoano.do`,
+			// url: `http://192.168.130.123:81/DW04WebService.asmx/getIndexResult`,
+			url: `http://192.168.130.198:81/DW04WebService.asmx/getIndexResult`,
+			// url: `http://58.23.137.152:8081/getIndexResult.do?USERID=&MACIP=&sc_prns=51`,
+			method: "GET",
+			header: {
+				// 'content-type': 'application/json'
+				'content-type': 'text/xml; charset=utf-8'
+			},
+			data: {
+				dataJson: JSON.stringify([{
+					"USERID": "admin",
+					"MACIP": ""
+				}, {
+					"sc_prns": 51
+				}])
 			},
 			success(res) {
 				resolve(res.data);
@@ -71,15 +98,15 @@ export function getPB35D1ByBoano(data) {
 export function getPB34D1ByKbno(data) {
 	return new Promise((resolve, reject) => {
 		uni.request({ //http://192.168.130.198:81/MC02WebService.asmx
-			url: `${database.ip}getPB34D1ByKbno.do`,
+			url: `${host}getPB34D1ByKbno.do`,
 			method: "GET",
 			header: {
 				'content-type': 'application/json'
 			},
 			data: {
-				USERID:'',
-				MACIP:'',
-				kb_no:'PB'
+				USERID: '',
+				MACIP: '',
+				kb_no: 'PB'
 			},
 			success(res) {
 				resolve(res.data);
@@ -94,15 +121,15 @@ export function getPB34D1ByKbno(data) {
 export function getPB34HByKbno(data) {
 	return new Promise((resolve, reject) => {
 		uni.request({ //http://192.168.130.198:81/MC02WebService.asmx
-			url: `${database.ip}getPB34HByKbno.do`,
+			url: `${host}getPB34HByKbno.do`,
 			method: "GET",
 			header: {
 				'content-type': 'application/json'
 			},
 			data: {
-				USERID:'',
-				MACIP:'',
-				kb_no:'PB'
+				USERID: '',
+				MACIP: '',
+				kb_no: 'PB'
 			},
 			success(res) {
 				resolve(res.data);
@@ -117,16 +144,15 @@ export function getPB34HByKbno(data) {
 export function getGetDW01(data) {
 	return new Promise((resolve, reject) => {
 		uni.request({ //http://192.168.130.198:81/MC02WebService.asmx
-			// url:`${database.testIp}getDataPR20.do`,
-			url: `${database.ip}getGetDW01.do`,
+			url: `${host}getGetDW01.do`,
 			method: "GET",
 			header: {
 				'content-type': 'application/json'
 			},
 			data: {
-				USERID:'',
-				MACIP:'',
-				kb_no:'MC'
+				USERID: '',
+				MACIP: '',
+				kb_no: 'MC'
 			},
 			success(res) {
 				resolve(res.data);
@@ -142,20 +168,20 @@ export function getGetDW01(data) {
 export function getDataHForPB34(data) {
 	return new Promise((resolve, reject) => {
 		uni.request({
-			url: `${database.ip}getDataHForPB34.do`,
+			url: `${host}getDataHForPB34.do`,
 			method: "GET",
 			header: {
 				'content-type': 'application/json'
 			},
 			data: {
-				USERID:'admin',
-				MACIP:'',
-				orderBy:'',
-				start:1,
-				pageLength:0,
-				ScRcno:'',
-				ElNo:'',
-				ScStatus:''
+				USERID: 'admin',
+				MACIP: '',
+				orderBy: '',
+				start: 1,
+				pageLength: 0,
+				ScRcno: '',
+				ElNo: '',
+				ScStatus: ''
 			},
 			success(res) {
 				resolve(res.data);
@@ -173,18 +199,18 @@ export function GetPB34D1ByKbno(data) {
 	}, {
 		"USERID": "063871"
 	}];
+	console.log(host);
 	return new Promise((resolve, reject) => {
 		uni.request({ //http://192.168.130.198:81/MC02WebService.asmx
-			// url:`${database.testIp}getDataPR20.do`,
-			url: `${database.ip}GetPB34D1ByKbno.do`,
+			url: `${host}GetPB34D1ByKbno.do`,
 			method: "GET",
 			header: {
 				'content-type': 'application/json'
 			},
 			data: {
-				USERID:'',
-				MACIP:'',
-				kb_no:'PB'
+				USERID: '',
+				MACIP: '',
+				kb_no: 'PB'
 			},
 			success(res) {
 				resolve(res.data);
@@ -197,10 +223,10 @@ export function GetPB34D1ByKbno(data) {
 }
 /* 出库头部 */
 export function getGridTitleCK(data) {
-	console.log(data);
+	console.log(`http://${host}getGridTitle.do`);
 	return new Promise((resolve, reject) => {
 		uni.request({ //http://192.168.150.89:8080/getGridTitle.do?USERID=admin&MACIP=&Userid=admin&MenuCode=PR02&GridCode=honpr02hList
-			url: `${database.ip}getGridTitle.do`,
+			url: `${host}getGridTitle.do`,
 			method: "GET",
 			header: {
 				'content-type': 'application/json'
@@ -239,7 +265,7 @@ export function getGridTitleBlmx(data) {
 	console.log(data);
 	return new Promise((resolve, reject) => {
 		uni.request({ //http://192.168.150.89:8080/getGridTitle.do?USERID=admin&MACIP=&Userid=admin&MenuCode=PR02&GridCode=honpr02hList
-			url: `${database.ip}getGridTitle.do`,
+			url: `${host}getGridTitle.do`,
 			method: "GET",
 			header: {
 				'content-type': 'application/json'
@@ -277,7 +303,7 @@ export function getGridTitle(data) {
 	console.log(data);
 	return new Promise((resolve, reject) => {
 		uni.request({ //http://192.168.150.89:8080/getGridTitle.do?USERID=admin&MACIP=&Userid=admin&MenuCode=PR02&GridCode=honpr02hList
-			url: `${database.ip}getGridTitle.do`,
+			url: `${host}getGridTitle.do`,
 			method: "GET",
 			header: {
 				'content-type': 'application/json'
@@ -316,7 +342,7 @@ export function getDataPR20(data) {
 	return new Promise((resolve, reject) => {
 		uni.request({ //192.168.150.89:8080/getDataH.do?USERID=admin&MACIP=&ScRcno=191102M010001086&ElNo=&ScStatus=&orderBy=&start=1&pageLength=50
 			//http://192.168.150.89:8080/getDataH.do?USERID=admin&MACIP=&ScRcno=191102M010001086&ElNo=&ScStatus=&orderBy=&start=1&pageLength=50
-			url: `${database.ip}getDataH.do`,
+			url: `${host}getDataH.do`,
 			method: "GET",
 			header: {
 				'content-type': 'application/json'
@@ -365,7 +391,7 @@ export function getList(data) {
 	console.log(data);
 	return new Promise((resolve, reject) => {
 		uni.request({ //58.23.137.151:8081/getDataPR20.do?USERID=admin&MACIP=&sc_odno=PRO1800005583&el_no=3011000010&sc_status=3&inventsizeid=HC
-			url: `${database.ip}getDataPR20.do`,
+			url: `${host}getDataPR20.do`,
 			method: "GET",
 			header: {
 				'content-type': 'application/json'
@@ -398,8 +424,7 @@ export function ckjh(data) {
 	}];
 	return new Promise((resolve, reject) => {
 		uni.request({ //http://192.168.130.198:81/MC02WebService.asmx
-			// url:`${database.testIp}getDataPR20.do`,
-			url: `${database.ip}getMC02HByUserid.do`,
+			url: `${host}getMC02HByUserid.do`,
 			method: "GET",
 			header: {
 				'content-type': 'application/json'
@@ -427,8 +452,7 @@ export function InsertMC02D1(data) {
 	console.log(data);
 	return new Promise((resolve, reject) => {
 		uni.request({ //http://192.168.130.198:81/MC02WebService.asmx
-			// url:`${database.testIp}getDataPR20.do`,
-			url: `${database.ip}InsertMC02D1.do`,
+			url: `${host}InsertMC02D1.do`,
 			method: "get",
 			header: {
 				'content-type': 'application/json'
@@ -467,8 +491,7 @@ export function InsertMC02D1(data) {
 export function getMC02D1ByMclist(data) {
 	return new Promise((resolve, reject) => {
 		uni.request({ //http://192.168.130.198:81/MC02WebService.asmx
-			// url:`${database.testIp}getDataPR20.do`,
-			url: `${database.ip}getMC02D1ByMclist.do`,
+			url: `${host}getMC02D1ByMclist.do`,
 			method: "get",
 			header: {
 				'content-type': 'application/json'
@@ -486,10 +509,10 @@ export function getMC02D1ByMclist(data) {
 	})
 }
 export function getBarnoInfo(data) {
-	console.log(data);
+	console.log(uni.getStorageSync("host"));
 	return new Promise((resolve, reject) => {
 		uni.request({
-			url: `${database.ip}getBarnoInfo.do`,
+			url: `${host}getBarnoInfo.do`,
 			method: "GET",
 			header: {
 				'content-type': 'application/json'
@@ -514,7 +537,7 @@ export function GetPR02WIQTYByPtno(data) {
 	console.log(data);
 	return new Promise((resolve, reject) => {
 		uni.request({
-			url: `${database.ip}GetPR02WIQTYByPtno.do`,
+			url: `${host}GetPR02WIQTYByPtno.do`,
 			method: "GET",
 			header: {
 				'content-type': 'application/json'
@@ -537,7 +560,7 @@ export function getScrcnoMtareaIn(data) {
 	console.log(data);
 	return new Promise((resolve, reject) => {
 		uni.request({
-			url: `${database.ip}getScrcnoMtareaIn.do`,
+			url: `${host}getScrcnoMtareaIn.do`,
 			method: "GET",
 			header: {
 				'content-type': 'application/json'
@@ -562,7 +585,7 @@ export function getPB08HByMtarea(data) {
 	console.log(data);
 	return new Promise((resolve, reject) => {
 		uni.request({
-			url: `${database.ip}getPB08HByMtarea.do`,
+			url: `${host}getPB08HByMtarea.do`,
 			method: "GET",
 			header: {
 				'content-type': 'application/json'
@@ -585,7 +608,7 @@ export function getMC02D1ByBarcode(data) {
 	console.log(data);
 	return new Promise((resolve, reject) => {
 		uni.request({
-			url: `${database.testIp}getMC02D1ByBarcode.do`,
+			url: `${host}getMC02D1ByBarcode.do`,
 			method: "GET",
 			header: {
 				'content-type': 'application/json'
@@ -607,7 +630,7 @@ export function getMC02_231(data) {
 	console.log(data);
 	return new Promise((resolve, reject) => {
 		uni.request({
-			url: `${database.testIp}getMC02_231.do`,
+			url: `${host}getMC02_231.do`,
 			method: "GET",
 			dataType: 'json',
 			header: {
@@ -719,7 +742,7 @@ let globalPostRequest = function(url, data, callback, isWait = true, isPost = tr
 export function getDataByElcode(data) {
 	return new Promise((resolve, reject) => {
 		uni.request({ //http://192.168.130.198:81/MC02WebService.asmx
-			url: `${database.ip}getDataByElcode.do`,
+			url: `${host}getDataByElcode.do`,
 			method: "POST",
 			header: {
 				'content-type': 'application/json'
@@ -738,9 +761,10 @@ export function getDataByElcode(data) {
 }
 export function getDataHMS(data) {
 	console.log(data);
+	var host = uni.getStorageSync("host");
 	return new Promise((resolve, reject) => {
 		uni.request({ //192.168.150.89:8080/getDataHMS.do?USERID=admin&MACIP=&orderBy=&start=1&pageLength=50&Enmkey=enmsc_status
-			url: `${database.ip}getDataHMS.do`,
+			url: `${host}getDataHMS.do`,
 			method: "GET",
 			header: {
 				'content-type': 'application/json'
@@ -765,19 +789,19 @@ export function getDataHMS(data) {
 }
 
 //根据作业站点获取工序和工序名称
-export function getPB01D1ByScstno(data){
+export function getPB01D1ByScstno(data) {
 	console.log(data);
-	return new Promise((resolve,reject)=>{
-		uni.request({//http://192.168.150.89:8080/getPB01D1ByScstno.do?USERID=admin&MACIP=192.168.150.94&sc_stno=47FT010001BSLJDP01
-			url:`${database.ip}getPB01D1ByScstno.do`,
-			method:"GET",
+	return new Promise((resolve, reject) => {
+		uni.request({ //http://192.168.150.89:8080/getPB01D1ByScstno.do?USERID=admin&MACIP=192.168.150.94&sc_stno=47FT010001BSLJDP01
+			url: `${host}getPB01D1ByScstno.do`,
+			method: "GET",
 			header: {
 				'content-type': 'application/json'
 			},
-			data:{
-				USERID:data.USERID,
-				MACIP:"192.168.150.94",
-				sc_stno:data.sc_stno,
+			data: {
+				USERID: data.USERID,
+				MACIP: "192.168.150.94",
+				sc_stno: data.sc_stno,
 			},
 			success(res) {
 				console.log(res);
@@ -791,19 +815,19 @@ export function getPB01D1ByScstno(data){
 }
 
 //判断料车是否存在
-export function getSpnoPB20H(data){
+export function getSpnoPB20H(data) {
 	console.log(data);
-	return new Promise((resolve,reject)=>{
-		uni.request({//192.168.150.89:8080/getSpnoPB20H.do?USERID=admin&MACIP=192.168.150.104&vc_no=FQC000000006
-			url:`${database.ip}getSpnoPB20H.do`,
-			method:"GET",
+	return new Promise((resolve, reject) => {
+		uni.request({ //192.168.150.89:8080/getSpnoPB20H.do?USERID=admin&MACIP=192.168.150.104&vc_no=FQC000000006
+			url: `${host}getSpnoPB20H.do`,
+			method: "GET",
 			header: {
 				'content-type': 'application/json'
 			},
-			data:{
-				USERID:data.USERID,
-				MACIP:"192.168.150.104",
-				vc_no:data.vc_no,
+			data: {
+				USERID: data.USERID,
+				MACIP: "192.168.150.104",
+				vc_no: data.vc_no,
 			},
 			success(res) {
 				console.log(res);
@@ -817,19 +841,19 @@ export function getSpnoPB20H(data){
 }
 
 //根据流程单获取生产工单、物料编号、品名规格、数量
-export function getPR02WIQTYByPtno1(data){
+export function getPR02WIQTYByPtno1(data) {
 	console.log(data);
-	return new Promise((resolve,reject)=>{
-		uni.request({//192.168.150.89:8080/getPR02WIQTYByPtno.do?USERID=027684&MACIP=192.168.150.10&sc_rcno=L1900047268002
-			url:`${database.ip}getPR02WIQTYByPtno.do`,
-			method:"GET",
+	return new Promise((resolve, reject) => {
+		uni.request({ //192.168.150.89:8080/getPR02WIQTYByPtno.do?USERID=027684&MACIP=192.168.150.10&sc_rcno=L1900047268002
+			url: `${host}getPR02WIQTYByPtno.do`,
+			method: "GET",
 			header: {
 				'content-type': 'application/json'
 			},
-			data:{
-				USERID:data.USERID,
-				MACIP:"192.168.150.10",
-				sc_rcno:data.sc_rcno,
+			data: {
+				USERID: data.USERID,
+				MACIP: "192.168.150.10",
+				sc_rcno: data.sc_rcno,
 			},
 			success(res) {
 				resolve(res.data);
@@ -842,19 +866,19 @@ export function getPR02WIQTYByPtno1(data){
 }
 
 //根据库位带出库位名
-export function getPB08HByMtarea1(data){
+export function getPB08HByMtarea1(data) {
 	console.log(data);
-	return new Promise((resolve,reject)=>{
-		uni.request({//192.168.150.89:8080/getPB08HByMtarea.do?USERID=027684&MACIP=192.168.150.10&mt_area=W1-D01210
-			url:`${database.ip}getPB08HByMtarea.do`,
-			method:"GET",
+	return new Promise((resolve, reject) => {
+		uni.request({ //192.168.150.89:8080/getPB08HByMtarea.do?USERID=027684&MACIP=192.168.150.10&mt_area=W1-D01210
+			url: `${host}getPB08HByMtarea.do`,
+			method: "GET",
 			header: {
 				'content-type': 'application/json'
 			},
-			data:{
-				USERID:data.USERID,
-				MACIP:"192.168.150.10",
-				mt_area:data.mt_area,
+			data: {
+				USERID: data.USERID,
+				MACIP: "192.168.150.10",
+				mt_area: data.mt_area,
 			},
 			success(res) {
 				console.log(res);
@@ -868,23 +892,23 @@ export function getPB08HByMtarea1(data){
 }
 
 //站点备流程单提交按钮
-export function crossingStationByScrcno(data){
+export function crossingStationByScrcno(data) {
 	console.log(data);
-	return new Promise((resolve,reject)=>{
-		uni.request({//192.168.150.89:8080//crossingStationByScrcno.do?USERID=027684&MACIP=192.168.150.10&sc_rcno=L1900047268002&pt_no=02CU&vc_no=FQC000000015&sc_stno=1002010018CZCNC&sc_status=0
-			url:`${database.ip}crossingStationByScrcno.do`,
-			method:"GET",
+	return new Promise((resolve, reject) => {
+		uni.request({ //192.168.150.89:8080//crossingStationByScrcno.do?USERID=027684&MACIP=192.168.150.10&sc_rcno=L1900047268002&pt_no=02CU&vc_no=FQC000000015&sc_stno=1002010018CZCNC&sc_status=0
+			url: `${host}crossingStationByScrcno.do`,
+			method: "GET",
 			header: {
 				'content-type': 'application/json'
 			},
-			data:{
-				USERID:data.USERID,
-				MACIP:"192.168.150.10",
-				sc_rcno:data.sc_rcno,
-				pt_no:data.pt_no,
-				vc_no:data.vc_no,
-				sc_stno:data.sc_stno,
-				sc_status:data.sc_status,
+			data: {
+				USERID: data.USERID,
+				MACIP: "192.168.150.10",
+				sc_rcno: data.sc_rcno,
+				pt_no: data.pt_no,
+				vc_no: data.vc_no,
+				sc_stno: data.sc_stno,
+				sc_status: data.sc_status,
 			},
 			success(res) {
 				console.log(res);
@@ -898,21 +922,21 @@ export function crossingStationByScrcno(data){
 }
 
 //流程单入库位提交按钮
-export function getScrcnoMtareaIn1(data){
+export function getScrcnoMtareaIn1(data) {
 	console.log(data);
-	return new Promise((resolve,reject)=>{
-		uni.request({//192.168.150.89:8080/getScrcnoMtareaIn.do?USERID=027684&MACIP=192.168.150.10&mt_area=MT01&sc_rcno=L2000002322002&vc_no=FQC000000015
-			url:`${database.ip}getScrcnoMtareaIn.do`,
-			method:"GET",
+	return new Promise((resolve, reject) => {
+		uni.request({ //192.168.150.89:8080/getScrcnoMtareaIn.do?USERID=027684&MACIP=192.168.150.10&mt_area=MT01&sc_rcno=L2000002322002&vc_no=FQC000000015
+			url: `${host}getScrcnoMtareaIn.do`,
+			method: "GET",
 			header: {
 				'content-type': 'application/json'
 			},
-			data:{
-				USERID:data.USERID,
-				MACIP:"192.168.150.10",
-				mt_area:data.mt_area,
-				sc_rcno:data.sc_rcno,
-				vc_no:data.vc_no,
+			data: {
+				USERID: data.USERID,
+				MACIP: "192.168.150.10",
+				mt_area: data.mt_area,
+				sc_rcno: data.sc_rcno,
+				vc_no: data.vc_no,
 			},
 			success(res) {
 				console.log(res);
@@ -926,20 +950,20 @@ export function getScrcnoMtareaIn1(data){
 }
 
 //流程单入料车提交按钮
-export function scrcnoVcnoIn(data){
+export function scrcnoVcnoIn(data) {
 	console.log(data);
-	return new Promise((resolve,reject)=>{
-		uni.request({//192.168.150.89:8080/scrcnoVcnoIn.do?USERID=027684&MACIP=192.168.150.10&vc_no=FQC000000015&sc_rcno=L2000005677007
-			url:`${database.ip}scrcnoVcnoIn.do`,
-			method:"GET",
+	return new Promise((resolve, reject) => {
+		uni.request({ //192.168.150.89:8080/scrcnoVcnoIn.do?USERID=027684&MACIP=192.168.150.10&vc_no=FQC000000015&sc_rcno=L2000005677007
+			url: `${host}scrcnoVcnoIn.do`,
+			method: "GET",
 			header: {
 				'content-type': 'application/json'
 			},
-			data:{
-				USERID:data.USERID,
-				MACIP:"192.168.150.10",
-				vc_no:data.vc_no,
-				sc_rcno:data.sc_rcno
+			data: {
+				USERID: data.USERID,
+				MACIP: "192.168.150.10",
+				vc_no: data.vc_no,
+				sc_rcno: data.sc_rcno
 			},
 			success(res) {
 				console.log(res);

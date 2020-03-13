@@ -56,7 +56,15 @@
 			}
 		},
 		onLoad(e) {
-			this.host_name = uni.getStorageSync("server_name");
+			if(!uni.getStorageSync("server_name")){
+				this.host_name='正式服务器';
+				this.host=database.ip_zs
+			}else{
+				this.host = uni.getStorageSync("host");
+				this.host_name = uni.getStorageSync("server_name");
+			}
+			console.log(this.host_name);
+			console.log(this.host);
 			this.platform = uni.getSystemInfoSync().platform;
 			this.currentH = uni.getSystemInfoSync().windowHeight;
 			var webView = this.$mp.page.$getAppWebview();
@@ -89,56 +97,13 @@
 				console.log(data);
 				this.selectIndex = data.index
 			},
-			getLogin: function(workId, pwd) {
-				uni.setStorageSync("username", workId);
-				console.log('https://oa.fpc98.com/SerFile/Service.asmx/h_in');
-				return new Promise((resolve, reject) => {
-					uni.request({
-						//url:'http://10.10.10.8:85/SerFile/Service.asmx',
-						url: 'https://oa.fpc98.com/SerFile/Service.asmx/h_in',
-						data: {
-							emplid: workId,
-							addrter: pwd
-						},
-						success(res) {
-							console.log(res.data);
-							var data = res.data.split('<?xml version="1.0" encoding="utf-8"?>');
-							var data = data[1].split('<boolean xmlns="http://oa.fpc98.com">');
-							var data = data[1].split('</boolean>');
-							var data = data[0];
-							if (data == "true") {
-								resolve(data);
-							} else {
-								var msg = "帐号或密码不正确"
-								resolve(msg);
-							}
-							// var parser = new DOMParser();//不支持app
-							// var xmlDoc = parser.parseFromString(res.data, "text/xml");
-							// console.log(xmlDoc.getElementsByTagName("boolean"));
-							// var bool = xmlDoc.getElementsByTagName("boolean");
-							// console.log(bool[0].innerHTML);
-							// if (bool[0].innerHTML == "true") {
-							// 	uni.navigateTo({
-							// 		url: '/pages/main/main'
-							// 	})
-							// } else {
-							// 	console.log("工号或密码错误！");
-							// }
-
-						},
-						fail(err) {
-							console.log(err);
-						}
-					})
-				})
-			},
 			login() {
 				//登录验证
 				console.log(database);
 				if (this.host == "" || this.host == undefined) {
 					if (!uni.getStorageSync("host")) {
-						let baseip = database.ip;
-						this.host = baseip.substring(baseip.indexOf("/") + 2, baseip.lastIndexOf("/"));
+						let baseip = database.ip_zs;
+						this.host = baseip;
 						console.log(this.host);
 					}
 				}
@@ -152,7 +117,7 @@
 						flag = true;
 						break;
 					} else {
-						console.log("未输入");
+						console.log("服务器地址未获取");
 						flag = false;
 					}
 				}
@@ -175,12 +140,12 @@
 					})
 					return
 				}
-				login(userData, this.host + "/").then(res => {
+				login(userData, this.host).then(res => {
 					console.log(res);
 					if (res.errMsg == "request:faill") {
-						console.log("服务器不存在");
+						console.log("请求失败！");
 						uni.showToast({
-							title: '服务器不存在',
+							title: '请求失败！',
 							icon: "none"
 						})
 						return;
@@ -190,7 +155,7 @@
 						uni.showToast({
 							title: res.errMsg
 						})
-						uni.navigateTo({
+						uni.reLaunch({
 							url: '/pages/index/menu'
 						})
 					} else {

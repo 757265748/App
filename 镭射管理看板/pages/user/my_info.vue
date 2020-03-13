@@ -53,7 +53,7 @@
 			},
 			exitLogin() {
 				uni.removeStorageSync('emplid');
-				uni.navigateTo({
+				uni.reLaunch({
 					url: '/pages/login/login'
 				})
 			},

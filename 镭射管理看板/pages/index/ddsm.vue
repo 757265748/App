@@ -13,49 +13,49 @@
 						<view class="uni-form-item uni-row">
 							<view class="title">作业站点</view>
 							<view class="with-fun">
-								<input class="uni-input" placeholder="扫一扫" disabled="" @click="scan" :value="result" />
+								<input class="uni-input" @confirm='scan' :value="result" />
 							</view>
 						</view>
 						<view class="uni-form-item uni-row">
 							<view class="title">工序名称</view>
 							<view class="with-fun">
-								<input class="uni-input" v-model="pt_name" disabled=""/>
+								<input class="uni-input" v-model="pt_name" disabled="" style="background-color: #BBBBBB;"/>
 							</view>
 						</view>
 						<view class="uni-form-item uni-row">
 							<view class="title">料车</view>
 							<view class="with-fun">
-								<input class="uni-input" placeholder="扫一扫" disabled="" @click="scan1" :value="result1" />
+								<input class="uni-input" @confirm='scan1' :value="result1" />
 							</view>
 						</view>
 						<view class="uni-form-item uni-row">
 							<view class="title">流程单号</view>
 							<view class="with-fun">
-								<input class="uni-input" placeholder="扫一扫" disabled="" @click="scan2" :value="result2" />
+								<input class="uni-input" @confirm='scan2' :value="result2" />
 							</view>
 						</view>
 						<view class="uni-form-item uni-row">
 							<view class="title">生产工单</view>
 							<view class="with-fun">
-								<input class="uni-input" v-model="sc_odno" disabled=""/>
+								<input class="uni-input" v-model="sc_odno" disabled="" style="background-color: #BBBBBB;"/>
 							</view>
 						</view>
 						<view class="uni-form-item uni-row">
 							<view class="title">物料编号</view>
 							<view class="with-fun">
-								<input class="uni-input" v-model="el_no" disabled=""/>
+								<input class="uni-input" v-model="el_no" disabled="" style="background-color: #BBBBBB;"/>
 							</view>
 						</view>
 						<view class="uni-form-item uni-row">
 							<view class="title">品名规格</view>
 							<view class="with-fun">
-								<input class="uni-input" v-model="el_name" disabled=""/>
+								<input class="uni-input" v-model="el_name" disabled="" style="background-color: #BBBBBB;"/>
 							</view>
 						</view>
 						<view class="uni-form-item uni-row">
 							<view class="title">数量</view>
 							<view class="with-fun">
-								<input class="uni-input" v-model="sc_qty" disabled=""/>
+								<input class="uni-input" v-model="sc_qty" disabled="" style="background-color: #BBBBBB;"/>
 							</view>
 						</view>
 						<view class="btn_group uni-row uni-flex">
@@ -74,49 +74,49 @@
 						<view class="uni-form-item uni-row">
 							<view class="title">库位代号</view>
 							<view class="with-fun">
-								<input class="uni-input" placeholder="扫一扫" disabled="" @click="scan3" :value="result3" />
+								<input class="uni-input" @confirm='scan3' :value="result3" />
 							</view>
 						</view>
 						<view class="uni-form-item uni-row">
 							<view class="title">库位名称</view>
 							<view class="with-fun">
-								<input class="uni-input" v-model="wm_name" disabled=""/>
+								<input class="uni-input" v-model="wm_name" disabled="" style="background-color: #BBBBBB;"/>
 							</view>
 						</view>
 						<view class="uni-form-item uni-row">
 							<view class="title">料车</view>
 							<view class="with-fun">
-								<input class="uni-input" placeholder="扫一扫" disabled="" @click="scan4" :value="result4" />
+								<input class="uni-input" @confirm='scan4' :value="result4" />
 							</view>
 						</view>
 						<view class="uni-form-item uni-row">
 							<view class="title">流程单号</view>
 							<view class="with-fun">
-								<input class="uni-input" placeholder="扫一扫" disabled="" @click="scan5" :value="result5" />
+								<input class="uni-input" @confirm='scan5' :value="result5" />
 							</view>
 						</view>
 						<view class="uni-form-item uni-row">
 							<view class="title">生产工单</view>
 							<view class="with-fun">
-								<input class="uni-input" v-model="sc_odno1" disabled=""/>
+								<input class="uni-input" v-model="sc_odno1" disabled="" style="background-color: #BBBBBB;"/>
 							</view>
 						</view>
 						<view class="uni-form-item uni-row">
 							<view class="title">物料编号</view>
 							<view class="with-fun">
-								<input class="uni-input" v-model="el_no1" disabled=""/>
+								<input class="uni-input" v-model="el_no1" disabled="" style="background-color: #BBBBBB;"/>
 							</view>
 						</view>
 						<view class="uni-form-item uni-row">
 							<view class="title">品名规格</view>
 							<view class="with-fun">
-								<input class="uni-input" v-model="el_name1" disabled=""/>
+								<input class="uni-input" v-model="el_name1" disabled="" style="background-color: #BBBBBB;"/>
 							</view>
 						</view>
 						<view class="uni-form-item uni-row">
 							<view class="title">数量</view>
 							<view class="with-fun">
-								<input class="uni-input" v-model="sc_qty1" disabled=""/>
+								<input class="uni-input" v-model="sc_qty1" disabled="" style="background-color: #BBBBBB;"/>
 							</view>
 						</view>
 						<view class="btn_group uni-row uni-flex">
@@ -135,37 +135,37 @@
 						<view class="uni-form-item uni-row">
 							<view class="title">料车</view>
 							<view class="with-fun">
-								<input class="uni-input" placeholder="扫一扫" disabled="" @click="scan6" :value="result6" />
+								<input class="uni-input" @confirm='scan6' :value="result6" />
 							</view>
 						</view>
 						<view class="uni-form-item uni-row">
 							<view class="title">流程单号</view>
 							<view class="with-fun">
-								<input class="uni-input" placeholder="扫一扫" disabled="" @click="scan7" :value="result7" />
+								<input class="uni-input" @confirm='scan7' :value="result7" />
 							</view>
 						</view>
 						<view class="uni-form-item uni-row">
 							<view class="title">生产工单</view>
 							<view class="with-fun">
-								<input class="uni-input" v-model="sc_odno2" disabled=""/>
+								<input class="uni-input" v-model="sc_odno2" disabled="" style="background-color: #BBBBBB;"/>
 							</view>
 						</view>
 						<view class="uni-form-item uni-row">
 							<view class="title">物料编号</view>
 							<view class="with-fun">
-								<input class="uni-input" v-model="el_no2" disabled=""/>
+								<input class="uni-input" v-model="el_no2" disabled="" style="background-color: #BBBBBB;"/>
 							</view>
 						</view>
 						<view class="uni-form-item uni-row">
 							<view class="title">品名规格</view>
 							<view class="with-fun">
-								<input class="uni-input" v-model="el_name2" disabled=""/>
+								<input class="uni-input" v-model="el_name2" disabled="" style="background-color: #BBBBBB;"/>
 							</view>
 						</view>
 						<view class="uni-form-item uni-row">
 							<view class="title">数量</view>
 							<view class="with-fun">
-								<input class="uni-input" v-model="sc_qty2" disabled=""/>
+								<input class="uni-input" v-model="sc_qty2" disabled="" style="background-color: #BBBBBB;"/>
 							</view>
 						</view>
 						<view class="btn_group uni-row uni-flex">
@@ -270,208 +270,167 @@
 			}) */
 		},
 		methods: {
-			scan: function() {
-				uni.scanCode({
-					success: (res) => {
-						this.view = true;
-						this.url = "http://39.108.215.49:8009/html/2.html?res=" + res.result;
-						this.result = res.result;
-						var pages1 = {
-							USERID: uni.getStorageSync("username"),
-							sc_stno: this.result
-						};
-						getPB01D1ByScstno(pages1).then(res => {
-							if (res.IsSuccess) {
-								this.pt_name = res.DicResult["pt_name"];
-								this.pt_no = res.DicResult["pt_no"];
-							} else {
-								this.result = "";
-								uni.showToast({
-									icon: "none",
-									title: res.ErrorMsg,
-									duration: 3000
-								})
-							}
+			scan: function(e) {
+				this.result = e.detail.value;
+				var pages1 = {
+					USERID: uni.getStorageSync("username"),
+					sc_stno: this.result,
+				};
+				getPB01D1ByScstno(pages1).then(res => {
+					if (res.IsSuccess) {
+						this.pt_name = res.DicResult["pt_name"];
+						this.pt_no = res.DicResult["pt_no"];
+					} else {
+						this.result = "";
+						uni.showToast({
+							icon: "none",
+							title: res.ErrorMsg,
+							duration: 3000
 						})
 					}
-				});
+				})
 			},
-			scan1: function() {
-				uni.scanCode({
-					success: (res) => {
-						this.view = true;
-						this.result1 = res.result;
-						var pages5 = {
-							USERID: uni.getStorageSync("username"),
-							vc_no: this.result1
-						};
-						getSpnoPB20H(pages5).then(res => {
-							if (res.IsSuccess) {
-								this.vc_no = res.DicResult["vc_no"];
-							} else {
-								this.result1 = "";
-								uni.showToast({
-									icon: "none",
-									title: res.ErrorMsg,
-									duration: 3000
-								})
-							}
+			scan1: function(e) {
+				this.result1 = e.detail.value;
+				var pages5 = {
+					USERID: uni.getStorageSync("username"),
+					vc_no: this.result1
+				};
+				getSpnoPB20H(pages5).then(res => {
+					if (res.IsSuccess) {
+						this.vc_no = res.DicResult["vc_no"];
+					} else {
+						this.result1 = "";
+						uni.showToast({
+							icon: "none",
+							title: res.ErrorMsg,
+							duration: 3000
 						})
 					}
-				});
+				})
 			},
-			scan2: function() {
-				uni.scanCode({
-					success: (res) => {
-						this.view = true;
-						this.result2 = res.result;
-						var pages2 = {
-							USERID: uni.getStorageSync("username"),
-							sc_rcno: this.result2
-						};
-						getPR02WIQTYByPtno1(pages2).then(res => {
-							if (res.IsSuccess) {
-								this.sc_odno = res.DicResult["sc_odno"];
-								this.el_no = res.DicResult["el_no"];
-								this.el_name = res.DicResult["r_size"] + res.DicResult["el_size"];
-								this.sc_qty = res.DicResult["sc_qty"];
-							} else {
-								this.result2 = "";
-								uni.showToast({
-									icon: "none",
-									title: res.ErrorMsg,
-									duration: 3000
-								})
-							}
+			scan2: function(e) {
+				this.result2 = e.detail.value;
+				var pages2 = {
+					USERID: uni.getStorageSync("username"),
+					sc_rcno: this.result2
+				};
+				getPR02WIQTYByPtno1(pages2).then(res => {
+					if (res.IsSuccess) {
+						this.sc_odno = res.DicResult["sc_odno"];
+						this.el_no = res.DicResult["el_no"];
+						this.el_name = res.DicResult["r_size"] + res.DicResult["el_size"];
+						this.sc_qty = res.DicResult["sc_qty"];
+					} else {
+						this.result2 = "";
+						uni.showToast({
+							icon: "none",
+							title: res.ErrorMsg,
+							duration: 3000
 						})
 					}
-				});
+				})
 			},
-			scan3: function() {
-				uni.scanCode({
-					success: (res) => {
-						this.view = true;
-						this.result3 = res.result;
-						var pages4 = {
-							USERID: uni.getStorageSync("username"),
-							mt_area: this.result3
-						};
-						getPB08HByMtarea1(pages4).then(res => {
-							if (res.IsSuccess) {
-								this.wm_name = res.DicResult["wm_name"];
-							} else {
-								this.result3 = "";
-								uni.showToast({
-									icon: "none",
-									title: res.ErrorMsg,
-									duration: 3000
-								})
-							}
+			scan3: function(e) {
+				this.result3 = e.detail.value;
+				var pages4 = {
+					USERID: uni.getStorageSync("username"),
+					mt_area: this.result3
+				};
+				getPB08HByMtarea1(pages4).then(res => {
+					if (res.IsSuccess) {
+						this.wm_name = res.DicResult["wm_name"];
+					} else {
+						this.result3 = "";
+						uni.showToast({
+							icon: "none",
+							title: res.ErrorMsg,
+							duration: 3000
 						})
 					}
-				});
+				})
 			},
-			scan4: function() {
-				uni.scanCode({
-					success: (res) => {
-						this.view = true;
-						this.result4 = res.result;
-						var pages5 = {
-							USERID: uni.getStorageSync("username"),
-							vc_no: this.result4
-						};
-						getSpnoPB20H(pages5).then(res => {
-							if (res.IsSuccess) {
-								this.vc_no = res.DicResult["vc_no"];
-							} else {
-								this.result4 = "";
-								uni.showToast({
-									icon: "none",
-									title: res.ErrorMsg,
-									duration: 3000
-								})
-							}
+			scan4: function(e) {
+				this.result4 = e.detail.value;
+				var pages5 = {
+					USERID: uni.getStorageSync("username"),
+					vc_no: this.result4
+				};
+				getSpnoPB20H(pages5).then(res => {
+					if (res.IsSuccess) {
+						this.vc_no = res.DicResult["vc_no"];
+					} else {
+						this.result4 = "";
+						uni.showToast({
+							icon: "none",
+							title: res.ErrorMsg,
+							duration: 3000
 						})
 					}
-				});
+				})
 			},
-			scan5: function() {
-				uni.scanCode({
-					success: (res) => {
-						this.view = true;
-						this.result5 = res.result;
-						var pages2 = {
-							USERID: uni.getStorageSync("username"),
-							sc_rcno: this.result5
-						};
-						getPR02WIQTYByPtno1(pages2).then(res => {
-							if (res.IsSuccess) {
-								this.sc_odno1 = res.DicResult["sc_odno"];
-								this.el_no1 = res.DicResult["el_no"];
-								this.el_name1 = res.DicResult["r_size"] + res.DicResult["el_size"];
-								this.sc_qty1 = res.DicResult["sc_qty"];
-							} else {
-								this.result5 = "";
-								uni.showToast({
-									icon: "none",
-									title: res.ErrorMsg,
-									duration: 3000
-								})
-							}
+			scan5: function(e) {
+				this.result5 = e.detail.value;
+				var pages2 = {
+					USERID: uni.getStorageSync("username"),
+					sc_rcno: this.result5
+				};
+				getPR02WIQTYByPtno1(pages2).then(res => {
+					if (res.IsSuccess) {
+						this.sc_odno1 = res.DicResult["sc_odno"];
+						this.el_no1 = res.DicResult["el_no"];
+						this.el_name1 = res.DicResult["r_size"] + res.DicResult["el_size"];
+						this.sc_qty1 = res.DicResult["sc_qty"];
+					} else {
+						this.result5 = "";
+						uni.showToast({
+							icon: "none",
+							title: res.ErrorMsg,
+							duration: 3000
 						})
 					}
-				});
+				})
 			},
-			scan6: function() {
-				uni.scanCode({
-					success: (res) => {
-						this.view = true;
-						this.result6 = res.result;
-						var pages5 = {
-							USERID: uni.getStorageSync("username"),
-							vc_no: this.result6
-						};
-						getSpnoPB20H(pages5).then(res => {
-							if (res.IsSuccess) {
-								this.vc_no = res.DicResult["vc_no"];
-							} else {
-								this.result6 = "";
-								uni.showToast({
-									icon: "none",
-									title: res.ErrorMsg,
-									duration: 3000
-								})
-							}
+			scan6: function(e) {
+				this.result6 = e.detail.value;
+				var pages5 = {
+					USERID: uni.getStorageSync("username"),
+					vc_no: this.result6
+				};
+				getSpnoPB20H(pages5).then(res => {
+					if (res.IsSuccess) {
+						this.vc_no = res.DicResult["vc_no"];
+					} else {
+						this.result6 = "";
+						uni.showToast({
+							icon: "none",
+							title: res.ErrorMsg,
+							duration: 3000
 						})
 					}
-				});
+				})
 			},
-			scan7: function() {
-				uni.scanCode({
-					success: (res) => {
-						this.view = true;
-						this.result7 = res.result;
-						var pages2 = {
-							USERID: uni.getStorageSync("username"),
-							sc_rcno: this.result7
-						};
-						getPR02WIQTYByPtno1(pages2).then(res => {
-							if (res.IsSuccess) {
-								this.sc_odno2 = res.DicResult["sc_odno"];
-								this.el_no2 = res.DicResult["el_no"];
-								this.el_name2 = res.DicResult["r_size"] + res.DicResult["el_size"];
-								this.sc_qty2 = res.DicResult["sc_qty"];
-							} else {
-								this.result7 = "";
-								uni.showToast({
-									icon: "none",
-									title: res.ErrorMsg,
-									duration: 3000
-								})
-							}
+			scan7: function(e) {
+				this.result7 = e.detail.value;
+				var pages2 = {
+					USERID: uni.getStorageSync("username"),
+					sc_rcno: this.result7
+				};
+				getPR02WIQTYByPtno1(pages2).then(res => {
+					if (res.IsSuccess) {
+						this.sc_odno2 = res.DicResult["sc_odno"];
+						this.el_no2 = res.DicResult["el_no"];
+						this.el_name2 = res.DicResult["r_size"] + res.DicResult["el_size"];
+						this.sc_qty2 = res.DicResult["sc_qty"];
+					} else {
+						this.result7 = "";
+						uni.showToast({
+							icon: "none",
+							title: res.ErrorMsg,
+							duration: 3000
 						})
 					}
-				});
+				})
 			},
 			Submission1: function() {
 				if (this.result == "") {
@@ -570,14 +529,14 @@
 				if (this.result6 == "") {
 					uni.showToast({
 						icon: "none",
-						title: "流程单不能为空",
+						title: "料车不能为空",
 						duration: 3000
 					})
 				} else {
 					if (this.result7 == "") {
 						uni.showToast({
 							icon: "none",
-							title: "料车不能为空",
+							title: "流程单不能为空",
 							duration: 3000
 						})
 					} else {

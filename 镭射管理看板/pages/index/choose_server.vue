@@ -31,33 +31,36 @@
 					}
 				],
 				current: 0,
-				serverName:'zs',
-				server:'正式服务器',
+				serverName:'正式服务器',
+				serverValue:'zs',
 			}
 		},
 		onLoad() {
 			if(uni.getStorageSync("server_current")){
 				console.log(1);
 				this.current=uni.getStorageSync("server_current");
+				this.serverName=uni.getStorageSync("server_name");
+				console.log(this.current);
+				console.log(this.serverName);
 			}
 		},
 		methods: {
 			ip_dispose(ip){
-				let host=ip.substring(ip.indexOf("/")+2,ip.lastIndexOf("/"));
+				console.log(ip);
+				let host=ip;
 				return host;
 			},
 			ok(){
-				let serverName=this.serverName;
-				uni.setStorageSync("server_name",this.server)
-				console.log(serverName);
-				switch(serverName){
+				let serverValue=uni.getStorageSync("server_value")?uni.getStorageSync("server_value"):'zs';
+				console.log(serverValue);
+				switch(serverValue){
 					case 'zs':
-						console.log(this.ip_dispose(database.ip));
-						uni.setStorageSync("host",this.ip_dispose(database.ip));
+						uni.setStorageSync("server_name",'正式服务器')
+						uni.setStorageSync("host",database.ip_zs);
 						break;
 					case 'cs':
-						console.log(this.ip_dispose(database.ip1));
-						uni.setStorageSync("host",this.ip_dispose(database.ip1));
+						uni.setStorageSync("server_name",'测试服务器')
+						uni.setStorageSync("host",database.ip_cs);
 						break;
 				}
 				uni.navigateTo({
@@ -66,13 +69,13 @@
 			},
 			radioChange(evt) {
 				console.log(evt);
-				this.serverName=evt.detail.value;
+				this.serverValue=evt.detail.value;
 				for (let i = 0; i < this.items.length; i++) {
 					if (this.items[i].value === evt.target.value) {
 						this.server=this.items[i].name;
 						this.current = i;
 						uni.setStorageSync("server_current",i);
-						uni.setStorageSync("server_name",this.items[i].name);
+						uni.setStorageSync("server_value",this.items[i].value);
 						break;
 					}
 				}

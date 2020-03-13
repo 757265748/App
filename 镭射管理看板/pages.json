@@ -116,6 +116,6 @@
 		"navigationBarTitleText": "镭射设备管理看板",
 		"navigationBarBackgroundColor": "#333",
 		"backgroundColor": "#F8F8F8",
-		"pageOrientation": "portrait"
+		"pageOrientation": "auto"
 	}
 }

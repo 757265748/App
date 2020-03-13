@@ -60,7 +60,7 @@
 			}
 		},
 		onShow() {
-			
+			this.validLogin();
 		},
 		onReady() {
 			uni.createSelectorQuery().select('.grid-view').boundingClientRect().exec((ret) => {
@@ -71,7 +71,7 @@
 			})
 		},
 		onLoad() {
-			this.validLogin();
+			
 		},
 		methods: {
 			validUser(){
@@ -79,8 +79,8 @@
 			},
 			validLogin(){
 				if(!uni.getStorageSync("emplid")){
-					uni.navigateTo({
-						url:'/pages/index/choose_server'
+					uni.reLaunch({
+						url:'/pages/login/login'
 					})
 				}
 			},

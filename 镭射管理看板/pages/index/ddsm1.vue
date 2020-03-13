@@ -10,6 +10,7 @@
 					<view class="head">
 					</view>
 					<view class="body">
+						<input class="uni-input" />
 						<view class="uni-form-item uni-row">
 							<view class="title">作业站点</view>
 							<view class="with-fun">
@@ -19,7 +20,7 @@
 						<view class="uni-form-item uni-row">
 							<view class="title">工序名称</view>
 							<view class="with-fun">
-								<input class="uni-input" v-model="pt_name" disabled=""/>
+								<input class="uni-input" v-model="pt_name" disabled="" />
 							</view>
 						</view>
 						<view class="uni-form-item uni-row">
@@ -37,25 +38,25 @@
 						<view class="uni-form-item uni-row">
 							<view class="title">生产工单</view>
 							<view class="with-fun">
-								<input class="uni-input" v-model="sc_odno" disabled=""/>
+								<input class="uni-input" v-model="sc_odno" disabled="" />
 							</view>
 						</view>
 						<view class="uni-form-item uni-row">
 							<view class="title">物料编号</view>
 							<view class="with-fun">
-								<input class="uni-input" v-model="el_no" disabled=""/>
+								<input class="uni-input" v-model="el_no" disabled="" />
 							</view>
 						</view>
 						<view class="uni-form-item uni-row">
 							<view class="title">品名规格</view>
 							<view class="with-fun">
-								<input class="uni-input" v-model="el_name" disabled=""/>
+								<input class="uni-input" v-model="el_name" disabled="" />
 							</view>
 						</view>
 						<view class="uni-form-item uni-row">
 							<view class="title">数量</view>
 							<view class="with-fun">
-								<input class="uni-input" v-model="sc_qty" disabled=""/>
+								<input class="uni-input" v-model="sc_qty" disabled="" />
 							</view>
 						</view>
 						<view class="btn_group uni-row uni-flex">
@@ -80,7 +81,7 @@
 						<view class="uni-form-item uni-row">
 							<view class="title">库位名称</view>
 							<view class="with-fun">
-								<input class="uni-input" v-model="wm_name" disabled=""/>
+								<input class="uni-input" v-model="wm_name" disabled="" />
 							</view>
 						</view>
 						<view class="uni-form-item uni-row">
@@ -98,25 +99,25 @@
 						<view class="uni-form-item uni-row">
 							<view class="title">生产工单</view>
 							<view class="with-fun">
-								<input class="uni-input" v-model="sc_odno1" disabled=""/>
+								<input class="uni-input" v-model="sc_odno1" disabled="" />
 							</view>
 						</view>
 						<view class="uni-form-item uni-row">
 							<view class="title">物料编号</view>
 							<view class="with-fun">
-								<input class="uni-input" v-model="el_no1" disabled=""/>
+								<input class="uni-input" v-model="el_no1" disabled="" />
 							</view>
 						</view>
 						<view class="uni-form-item uni-row">
 							<view class="title">品名规格</view>
 							<view class="with-fun">
-								<input class="uni-input" v-model="el_name1" disabled=""/>
+								<input class="uni-input" v-model="el_name1" disabled="" />
 							</view>
 						</view>
 						<view class="uni-form-item uni-row">
 							<view class="title">数量</view>
 							<view class="with-fun">
-								<input class="uni-input" v-model="sc_qty1" disabled=""/>
+								<input class="uni-input" v-model="sc_qty1" disabled="" />
 							</view>
 						</view>
 						<view class="btn_group uni-row uni-flex">
@@ -147,25 +148,25 @@
 						<view class="uni-form-item uni-row">
 							<view class="title">生产工单</view>
 							<view class="with-fun">
-								<input class="uni-input" v-model="sc_odno2" disabled=""/>
+								<input class="uni-input" v-model="sc_odno2" disabled="" />
 							</view>
 						</view>
 						<view class="uni-form-item uni-row">
 							<view class="title">物料编号</view>
 							<view class="with-fun">
-								<input class="uni-input" v-model="el_no2" disabled=""/>
+								<input class="uni-input" v-model="el_no2" disabled="" />
 							</view>
 						</view>
 						<view class="uni-form-item uni-row">
 							<view class="title">品名规格</view>
 							<view class="with-fun">
-								<input class="uni-input" v-model="el_name2" disabled=""/>
+								<input class="uni-input" v-model="el_name2" disabled="" />
 							</view>
 						</view>
 						<view class="uni-form-item uni-row">
 							<view class="title">数量</view>
 							<view class="with-fun">
-								<input class="uni-input" v-model="sc_qty2" disabled=""/>
+								<input class="uni-input" v-model="sc_qty2" disabled="" />
 							</view>
 						</view>
 						<view class="btn_group uni-row uni-flex">
@@ -238,8 +239,10 @@
 				colors: ['#007aff', '#4cd964', '#dd524d'],
 				current: 0,
 				colorIndex: 0,
+				color:'black',
 				activeColor: '#333',
 				styleType: 'button',
+				showClearIcon: false
 			}
 		},
 		onLoad() {
@@ -270,6 +273,28 @@
 			}) */
 		},
 		methods: {
+			clearInput: function(event) {
+				this.color='white';
+				let timer = setTimeout(() => {
+					console.log(this.result);
+					if (this.result.length < 3) {
+						this.result = "";
+						this.color='black'
+					}else{
+						this.color='black'
+					}
+				}, 1000)
+				this.result = event.target.value;
+				if (event.target.value.length > 0) {
+					this.showClearIcon = true;
+				} else {
+					this.showClearIcon = false;
+				}
+			},
+			clearIcon: function() {
+				this.result = '';
+				this.showClearIcon = false;
+			},
 			scan: function() {
 				uni.scanCode({
 					success: (res) => {
@@ -611,8 +636,8 @@
 				}
 			},
 			Eliminate1: function() {
-				this.result ="";
-				this.pt_name ="";
+				this.result = "";
+				this.pt_name = "";
 				this.result1 = "";
 				this.result2 = "";
 				this.sc_odno = "";
@@ -622,7 +647,7 @@
 			},
 			Eliminate2: function() {
 				this.result3 = "";
-				this.wm_name="";
+				this.wm_name = "";
 				this.result4 = "";
 				this.result5 = "";
 				this.sc_odno1 = "";
@@ -641,6 +666,54 @@
 			onClickItem(index) {
 				if (this.current !== index) {
 					this.current = index
+					if (index == 0) {
+						this.result3 = "";
+						this.wm_name = "";
+						this.result4 = "";
+						this.result5 = "";
+						this.sc_odno1 = "";
+						this.el_no1 = "";
+						this.el_name1 = "";
+						this.sc_qty1 = "";
+						this.result6 = "";
+						this.result7 = "";
+						this.sc_odno2 = "";
+						this.el_no2 = "";
+						this.el_name2 = "";
+						this.sc_qty2 = "";
+					} else if (index == 1) {
+						this.result = "";
+						this.pt_name = "";
+						this.result1 = "";
+						this.result2 = "";
+						this.sc_odno = "";
+						this.el_no = "";
+						this.el_name = "";
+						this.sc_qty = "";
+						this.result6 = "";
+						this.result7 = "";
+						this.sc_odno2 = "";
+						this.el_no2 = "";
+						this.el_name2 = "";
+						this.sc_qty2 = "";
+					} else if (index == 2) {
+						this.result = "";
+						this.pt_name = "";
+						this.result1 = "";
+						this.result2 = "";
+						this.sc_odno = "";
+						this.el_no = "";
+						this.el_name = "";
+						this.sc_qty = "";
+						this.result3 = "";
+						this.wm_name = "";
+						this.result4 = "";
+						this.result5 = "";
+						this.sc_odno1 = "";
+						this.el_no1 = "";
+						this.el_name1 = "";
+						this.sc_qty1 = "";
+					}
 				}
 			},
 			styleChange(evt) {
@@ -789,5 +862,4 @@
 		text-align: center;
 		color: red;
 	}
-
 </style>
