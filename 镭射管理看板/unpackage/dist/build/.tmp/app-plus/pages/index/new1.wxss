@@ -16,6 +16,7 @@
 .b_2 .list .zz .list_zz,
 .b_2 .list .dz .list_dz {
 	margin: 2rpx;
+	font-size: 24px;
 	text-align: center;
 }
 .b_2 .list .jt .jt_head{
@@ -100,6 +101,9 @@
 	border-radius: 5rpx;
 	box-sizing: border-box;
 }
+.b_1,.b_2,.b_3{
+	overflow: hidden;
+}
 .body>view {
 	border: 1px solid #666;
 	overflow-y: scroll;
@@ -108,11 +112,11 @@
 	font-size: 0.1rem;
 }
 .body {
-	font-size: 12px;
+	font-size: 24px;
 }
 .head .title {
 	text-align: center;
-	font-size: .3rem;
+	/* font-size: .3rem; */
 	height: 20rpx;
 }
 .head .title text{
@@ -131,10 +135,12 @@
 view{
 	line-height: 1.5;
 	color: white;
+	font-size: 24px;
 }
 .item{
 	/* min-height: .8rem; */
 	/* border-radius: 5upx; */
+	text-align: center;
 }
 .title {
 	text-align: center;
@@ -144,6 +150,9 @@ view{
 .zz .zz_head .pageCount,
 .ywg .ywg_head .pageCount{
 	text-shadow: 0 0 3px #FF0000;
+}
+.head{
+	line-height: 0.5;
 }
 .pageCount{
 	width: .5rem;

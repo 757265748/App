@@ -7,7 +7,7 @@
   "id": "__UNI__1EABD4C",
   "name": "Hon_Link",
   "version": {
-    "name": "1.0.2",
+    "name": "1.0.6",
     "code": "100"
   },
   "description": "",
@@ -113,7 +113,9 @@
   },
   "screenOrientation": [
     "portrait-primary",
-    "portrait-secondary"
+    "portrait-secondary",
+    "landscape-primary",
+    "landscape-secondary"
   ],
   "usingComponents": {}
 }

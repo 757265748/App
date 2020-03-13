@@ -102,6 +102,9 @@
 
 
 
+
+
+
 /*每个页面公共css */
 @font-face {
 	font-family: uniicons;
@@ -1630,7 +1633,7 @@ uni-view {
 	text-indent: 10px;
 	padding: 0;
 	/* font-size: 16px; */
-	line-height: 20px;
+	line-height: 30px;
 	border: 1px solid #ccc;
 	border-radius: 10rpx;
 }

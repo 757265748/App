@@ -32,13 +32,15 @@
 		},
 		methods: {
 			versionCheck() {
-				console.log(plus.runtime.version);
+				// console.log(plus.runtime.version);
 				return new Promise((resolve,reject)=>{
 					uni.request({
 						url: 'http://192.168.130.123:8080/equalsVersion.do',
+						// url: 'http://192.168.130.198:8080/equalsVersion.do',
 						method: "get",
 						data: {
 							version: plus.runtime.version
+							// version: '1.0.1'
 						},
 						success(res) {
 							try {
@@ -78,8 +80,9 @@
 							if(result.index==0){
 								uni.setStorageSync("version", this.version);
 								console.log("callback---button--" + result.index);
-								console.log(that.version);
-								plus.runtime.openURL('http://192.168.130.123:81/APP/1.0.2.apk');
+								console.log('http://192.168.130.123/APP/'+that.version+'.apk?timestamp='+new Date().getTime());
+								plus.runtime.openURL('http://192.168.130.123/APP/'+that.version+'.apk?timestamp='+new Date().getTime());
+								// plus.runtime.openURL('http://192.168.150.89:8080/APP/'+that.version+'.apk?timestamp='+new Date().getTime());
 								// uni.downloadFile({
 								// 	url: "http://192.168.130.123/APP/1.0.2.apk",
 								// 	success: (res) => {
@@ -129,7 +132,7 @@
 		text-indent: 10px;
 		padding: 0;
 		/* font-size: 16px; */
-		line-height: 20px;
+		line-height: 30px;
 		border: 1px solid #ccc;
 		border-radius: 10upx;
 	}
